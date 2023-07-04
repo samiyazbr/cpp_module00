@@ -2,16 +2,6 @@
 
 Contact:: Contact(void) : found(false) {}
 
-//void Contact::execute_command(std::string cmd)
-//{
-//	if (cmd == "ADD")
-//		add_contact
-//	if (cmd == "SEARCH")
-//		search_contact
-//	if (cmd == "EXIT")
-//		exit_program
-//}
-
 Contact::Contact(std::string	first_name, std::string	last_name, std::string	nick_name,
 		std::string	darkest_secret, std::string	phone_number) : first_name(first_name), last_name(last_name),
 		nick_name(nick_name), darkest_secret(darkest_secret), phone_number(phone_number)
@@ -43,6 +33,17 @@ void Contact::print_contact(int num)
 	}
 }
 
+//Contact &Contact::operator=(const Contact &contact)
+//{
+//    this->first_name = contact.first_name;
+//    this->last_name = contact.last_name;
+//    this->nick_name = contact.nick_name;
+//    this->phone_number = contact.phone_number;
+//    this->darkest_secret = contact.darkest_secret;
+//    this->found = contact.found;
+//    return (*this);
+//}
+
 void Contact::print_contact_details(void)
 {
 	std::cout << "First Name: " << first_name << std::endl;
@@ -50,4 +51,9 @@ void Contact::print_contact_details(void)
 	std::cout << "Nick Name: " << nick_name << std::endl;
 	std::cout << "Phone number: " << phone_number << std::endl;
 	std::cout << "Darkest Secret: " << darkest_secret << std::endl;
+}
+
+bool Contact::getfound(void)
+{
+	return (found);
 }

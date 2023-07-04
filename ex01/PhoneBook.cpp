@@ -28,9 +28,34 @@ void PhoneBook::add_contact(void)
 
 void PhoneBook::display_contact(void)
 {
-	cout << "| INDEX | FIRST_NAME | LAST_NAME | NICK_NAME |" << std::endl;
+	std::cout << "| INDEX | FIRST_NAME | LAST_NAME | NICK_NAME |" << std::endl;
 	for (int i = 0; i < 8; i++)
 	{
 		arr[i].print_contact(i);
 	}
+}
+
+void PhoneBook::search_contact(void)
+{
+	std::string ContactID;
+	int ContactId;
+	bool ValidInput = true;
+	display_contact();
+	std::cout << "Choose a Contact" << std::endl;
+	std::cin >> ContactID;
+	for(int i = 0; ContactID.length(); i++)
+	{
+		if (!isdigit(ContactID[i]))
+			ValidInput = false;
+	}
+	std::istringstream(ContactID) >> ContactId;
+	if (!std::cin || ContactId < 0 || ContactId >= 8
+		|| arr[ContactId].getfound() == false || ValidInput == false
+			|| ContactID.length() == 0)
+	{
+		std::cout << "Invalid Contact" << std::endl;
+	}
+	else
+		arr[ContactId].print_contact_details();
+	std::cout << std::endl;
 }

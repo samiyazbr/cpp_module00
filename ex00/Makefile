@@ -1,2 +1,2 @@
 all: 
-	g++ *.cpp -Wall -Werror -Wextra -o megaphone
+	c++ *.cpp -Wall -Werror -Wextra -o megaphone
