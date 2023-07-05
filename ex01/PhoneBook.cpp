@@ -26,9 +26,9 @@ void PhoneBook::add_contact(void)
 	arr[num].set_nn(nick_name);
 	arr[num].set_pn(phone_number);
 	arr[num].set_ds(darkest_secret);
-	num++;
 	if (num == 8)
 		num = 0;
+	num++;
 }
 
 void PhoneBook::display_contact(void)
